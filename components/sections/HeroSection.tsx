@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { NeuralNoise } from "@/components/ui/neural-noise";
-import { HeroVisuals } from "@/components/sections/HeroVisuals";
 
 /* ─── Static background glows (no GSAP needed) ───────────── */
 
@@ -85,11 +84,11 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.12, duration: 0.75, ease: [0.22, 1, 0.36, 1] as const }}
-          className="mb-5 font-display font-bold leading-[1.08] tracking-[-0.02em] text-white"
-          style={{ fontSize: "clamp(28px, 3.8vw, 54px)" }}
+          className="mb-6 font-display font-bold text-white"
+          style={{ fontSize: "clamp(28px, 3.8vw, 48px)", lineHeight: "1.3" }}
         >
-          ¿No encontrás el equipo perfecto?<br />
-          <span className="text-shimmer-gold">Zenit lo sabe antes que vos.</span>
+          ¿Cómo acelerar manteniendo calidad<br />
+          <span className="text-shimmer-gold">si necesitás reducir costos?</span>
         </motion.h1>
 
         {/* Subheadline */}
@@ -97,11 +96,14 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.28, duration: 0.65, ease: [0.22, 1, 0.36, 1] as const }}
-          className="mb-8 max-w-2xl font-sans text-base leading-relaxed text-muted-foreground sm:text-[17px]"
+          className="mb-8 max-w-lg font-sans text-muted-foreground"
+          style={{ fontSize: "16px", lineHeight: "1.6" }}
         >
-          Matching inteligente powered by Kaizen AI.{" "}
-          Descubrimiento exhaustivo, no búsqueda random.{" "}
-          <span className="text-white/80">Equipos curados. Proyectos exitosos.</span>
+          <span className="font-semibold text-white/90">Zenit.</span>
+          <br /><br />
+          Equipos especializados bajo demanda.<br />
+          Expande capacidad. Reduce costos.<br />
+          <span className="text-white/70">Sin fricciones. Sin sobreexigir a tu equipo.</span>
         </motion.p>
 
         {/* CTAs */}
@@ -116,7 +118,7 @@ export function HeroSection() {
               href="/companies"
               className="inline-flex items-center gap-2 rounded-xl bg-white px-7 py-3 font-sans text-sm font-bold text-[#0F0F0F] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_48px_rgba(255,255,255,0.28)]"
             >
-              Start for Companies →
+              Scale Your Next Project →
             </Link>
             <Link
               href="/squads/pre-registro"
@@ -131,10 +133,11 @@ export function HeroSection() {
           >
             See how it works ↓
           </a>
+          {/* Trust signals inline */}
+          <p className="mt-2 font-sans text-[13px] text-muted-foreground">
+            15+ squads · $500k+ projects · 95% success rate
+          </p>
         </motion.div>
-
-        {/* Hero visuals */}
-        <HeroVisuals />
 
       </div>
     </section>

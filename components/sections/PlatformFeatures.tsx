@@ -376,12 +376,12 @@ export function PlatformFeatures() {
 
         <FeatureSection
           eyebrow="Squad Marketplace"
-          title={<>Browse <span className="text-shimmer-gold">500+ elite squads</span>,<br />find yours in minutes.</>}
-          description="Every squad is technically vetted. Real reviews, real delivery history, real availability. Filter by tech stack, AI domain expertise, or let Kaizen match automatically — for general projects and AI transformation."
+          title={<>Browse <span className="text-shimmer-gold">500+ elite squads</span>,<br />general or AI-specialized.</>}
+          description="Every squad is technically vetted — from full-stack React teams to ML engineers with production AI experience. Filter by stack, AI domain, or let Kaizen match automatically. No guessing, no wasted calls."
           features={[
-            { title: "Advanced tech stack & AI domain filtering", desc: "React, Node, Python, ML/AI, DevOps — find exactly what your project needs, general or AI-specialized." },
-            { title: "Verified reviews & delivery track record", desc: "See exactly what each squad has shipped, not just their pitch." },
-            { title: "Real-time availability indicators", desc: "Know before you reach out whether a squad can start this week." },
+            { title: "AI specialist & general tech filtering", desc: "React, Node, Python, ML/AI, MLOps — find exactly what your project needs. AI-native squads clearly labeled with domain expertise." },
+            { title: "Verified AI delivery history", desc: "See which squads have shipped LLMs, recommendation engines, and ML pipelines — not just their capabilities slide." },
+            { title: "Real-time availability", desc: "Know before you reach out whether an AI-native or general squad can start this week." },
           ]}
           cta="Browse the marketplace"
           ctaHref="/squads"
@@ -430,12 +430,12 @@ export function PlatformFeatures() {
         <FeatureSection
           centerRise
           eyebrow="Match Intelligence"
-          title={<>Kaizen learns.<br />Every match gets <span className="text-shimmer-gold">smarter.</span></>}
-          description="Kaizen doesn't just run a search. It tracks delivery outcomes, client satisfaction, and team performance — for general projects and AI transformation alike. Matching accuracy improves with every project completed."
+          title={<>Kaizen aprende.<br />Cada match con IA es <span className="text-shimmer-gold">más preciso.</span></>}
+          description="Kaizen no ejecuta una búsqueda — analiza contexto: tu madurez tecnológica, historial de squads, vertical de negocio. Para proyectos generales y transformación con IA, la precisión mejora con cada proyecto completado."
           features={[
-            { title: "94% match quality score", desc: "Squads recommended by Kaizen deliver on time 94% of the time — general and AI projects." },
-            { title: "AI domain expertise tracking", desc: "For AI projects: Kaizen tracks mentorship effectiveness and domain-specific delivery, not just code velocity." },
-            { title: "Transparent reasoning", desc: "See exactly why Kaizen recommended each squad for your project — including AI domain fit." },
+            { title: "94% match quality — general y proyectos IA", desc: "Los squads recomendados por Kaizen entregan on-time el 94% de las veces, sin importar el tipo de proyecto." },
+            { title: "Tracking de expertise IA por dominio", desc: "Para proyectos IA: Kaizen mide efectividad de mentorship, entrega específica por dominio y transferencia de conocimiento al equipo interno." },
+            { title: "Razonamiento transparente", desc: "Ves exactamente por qué Kaizen recomendó cada squad — incluyendo su fit en IA, vertical y stack." },
           ]}
           cta="See the full platform"
           ctaHref="/how-it-works"

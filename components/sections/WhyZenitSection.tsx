@@ -1,196 +1,160 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { AlertTriangle, EyeOff, ShieldX } from "lucide-react";
-import gsap from "gsap";
-import { staggerContainer, fadeInUp, scaleIn, defaultViewport } from "@/lib/motionVariants";
+import { ArrowRight, Check, X, Minus } from "lucide-react";
+import { defaultViewport } from "@/lib/motionVariants";
+import { cn } from "@/lib/utils";
 
-const problems = [
-  {
-    icon: AlertTriangle,
-    stat: "60+ days",
-    title: "Hiring takes forever",
-    body: "Traditional hiring averages 60–90 days — job posts, agencies, interviews, onboarding. By the time you have a team, the window is gone.",
-    accent: { icon: "text-amber-400", stat: "text-amber-400", border: "rgba(245,158,11,0.5)" },
-  },
-  {
-    icon: EyeOff,
-    stat: "$200K+",
-    title: "Agencies drain budgets",
-    body: "Legacy agencies quote $200K and four months for an MVP. Hidden fees, project managers, sales overhead — none of it ships product.",
-    accent: { icon: "text-red-400", stat: "text-red-400", border: "rgba(239,68,68,0.5)" },
-  },
-  {
-    icon: ShieldX,
-    stat: "70% fail",
-    title: "No quality control",
-    body: "Most outsourced projects fail to deliver. Zero vetting, zero accountability, zero recourse when things go wrong.",
-    accent: { icon: "text-rose-400", stat: "text-rose-400", border: "rgba(251,113,133,0.5)" },
-  },
-] as const;
+/* ─── Comparison Matrix mockup ───────────────────────────── */
 
-export function WhyZenitSection() {
-  const bgRef   = useRef<HTMLDivElement>(null);
-  const orb1Ref = useRef<HTMLDivElement>(null);
-  const orb2Ref = useRef<HTMLDivElement>(null);
+type CellVal = true | false | "half";
 
-  useEffect(() => {
-    if (typeof window === "undefined") return;
+function Cell({ val, highlight }: { val: CellVal; highlight?: boolean }) {
+  if (val === true) {
+    return (
+      <div className={cn("flex items-center justify-center py-0.5", highlight && "rounded-lg bg-teal/10")}>
+        <Check size={15} className="text-teal" strokeWidth={2.5} />
+      </div>
+    );
+  }
+  if (val === "half") {
+    return (
+      <div className="flex items-center justify-center py-0.5">
+        <Minus size={15} className="text-amber-400/70" strokeWidth={2.5} />
+      </div>
+    );
+  }
+  return (
+    <div className="flex items-center justify-center py-0.5">
+      <X size={13} className="text-white/25" strokeWidth={2} />
+    </div>
+  );
+}
 
-    if (bgRef.current) {
-      gsap.to(bgRef.current, {
-        opacity: 0.75,
-        duration: 6,
-        ease: "sine.inOut",
-        yoyo: true,
-        repeat: -1,
-      });
-    }
-    if (orb1Ref.current) {
-      gsap.to(orb1Ref.current, {
-        opacity: 0.6,
-        scale: 1.1,
-        duration: 8,
-        ease: "sine.inOut",
-        yoyo: true,
-        repeat: -1,
-        delay: 2,
-      });
-    }
-    if (orb2Ref.current) {
-      gsap.to(orb2Ref.current, {
-        opacity: 0.5,
-        duration: 5,
-        ease: "sine.inOut",
-        yoyo: true,
-        repeat: -1,
-        delay: 1,
-      });
-    }
-
-    return () => {
-      [bgRef, orb1Ref, orb2Ref].forEach((r) => { if (r.current) gsap.killTweensOf(r.current); });
-    };
-  }, []);
+function ComparisonMatrix() {
+  const cols = ["Hiring", "Upwork", "Zenit"];
+  const rows: { label: string; vals: [CellVal, CellVal, CellVal] }[] = [
+    { label: "Velocidad",    vals: [false, "half", true] },
+    { label: "Calidad",      vals: [true,  "half", true] },
+    { label: "Costo",        vals: [false, "half", true] },
+    { label: "Flexibilidad", vals: [false, "half", true] },
+  ];
 
   return (
-    <section className="relative overflow-hidden py-28 bg-background">
-      {/* Animated background gradient */}
+    <div
+      className="overflow-hidden rounded-2xl border border-white/10 shadow-[0_24px_60px_rgba(0,0,0,0.65)]"
+      style={{ background: "#050f0f" }}
+    >
+      {/* Header row */}
+      <div className="grid grid-cols-4 border-b border-white/8 px-5 py-3" style={{ background: "#020c0b" }}>
+        <div />
+        {cols.map((col, i) => (
+          <div key={col} className="flex items-center justify-center">
+            <span className={cn(
+              "font-mono text-[11px] font-bold",
+              i === 2 ? "text-cyan" : "text-muted-foreground/70"
+            )}>
+              {i === 2 && <span className="mr-1 text-teal">✦</span>}{col}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      {/* Data rows */}
+      {rows.map((row, ri) => (
+        <div
+          key={row.label}
+          className={cn("grid grid-cols-4 items-center px-5 py-3.5", ri < rows.length - 1 && "border-b border-white/5")}
+        >
+          <span className="font-sans text-[12px] font-medium text-white/70">{row.label}</span>
+          {row.vals.map((val, i) => (
+            <Cell key={i} val={val} highlight={i === 2} />
+          ))}
+        </div>
+      ))}
+
+      {/* Footer */}
+      <div className="border-t border-white/5 px-5 py-3">
+        <p className="text-center font-mono text-[9px] text-muted-foreground">
+          Basado en tiempo promedio de contratación en LATAM · 2025
+        </p>
+      </div>
+    </div>
+  );
+}
+
+/* ─── Section ────────────────────────────────────────────── */
+
+export function WhyZenitSection() {
+  const bullets = [
+    { label: "vs Hiring:",  desc: "4× más rápido, sin equity ni nómina fija" },
+    { label: "vs Upwork:",  desc: "Equipos vetados técnicamente, no random" },
+    { label: "vs Toptal:",  desc: "50% más accesible, misma calidad garantizada" },
+  ];
+
+  return (
+    <section className="relative overflow-hidden py-20">
+      {/* Background glow */}
       <div className="pointer-events-none absolute inset-0" aria-hidden>
         <div
-          ref={bgRef}
           className="absolute inset-0"
-          style={{
-            background: "radial-gradient(ellipse 70% 50% at 30% 60%, rgba(239,68,68,0.10) 0%, rgba(245,158,11,0.06) 50%, transparent 80%)",
-            opacity: 0.4,
-          }}
+          style={{ background: "radial-gradient(ellipse 70% 60% at 20% 60%, rgba(245,158,11,0.05) 0%, transparent 70%)" }}
         />
         <div
-          ref={orb1Ref}
-          className="absolute -top-32 right-1/4 h-[600px] w-[600px] rounded-full"
-          style={{
-            background: "radial-gradient(circle, rgba(245,158,11,0.18) 0%, transparent 65%)",
-            filter: "blur(80px)",
-            opacity: 0.35,
-          }}
-        />
-        <div
-          ref={orb2Ref}
-          className="absolute bottom-0 -left-24 h-[500px] w-[500px] rounded-full"
-          style={{
-            background: "radial-gradient(circle, rgba(239,68,68,0.14) 0%, transparent 65%)",
-            filter: "blur(100px)",
-            opacity: 0.3,
-          }}
+          className="absolute -right-24 bottom-0 h-[500px] w-[500px] rounded-full"
+          style={{ background: "radial-gradient(circle, rgba(245,158,11,0.10) 0%, transparent 65%)", filter: "blur(90px)", opacity: 0.45 }}
         />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={defaultViewport}
-          className="mb-20 max-w-3xl"
-        >
-          <motion.p variants={fadeInUp} className="mb-4 font-sans text-sm font-semibold uppercase tracking-widest text-amber-400/90">
-            The problem
-          </motion.p>
-          <motion.h2
-            variants={fadeInUp}
-            className="font-display font-bold leading-tight"
-            style={{ fontSize: "clamp(36px, 4.5vw, 60px)" }}
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+
+          {/* ── Text (left) ── */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={defaultViewport}
+            transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] as const }}
+            className="flex flex-col gap-6"
           >
-            <span className="text-white">Hiring tech talent </span>
-            <span className="text-red-400/70">is fundamentally broken.</span>
-          </motion.h2>
-          <motion.p variants={fadeInUp} className="mt-5 max-w-xl font-sans text-lg leading-relaxed text-muted-foreground">
-            Every path — agencies, freelancers, in-house hiring — is either too slow, too expensive, or too risky. Usually all three.
-          </motion.p>
-        </motion.div>
+            <h2
+              className="font-display font-bold leading-tight text-white"
+              style={{ fontSize: "clamp(26px, 3vw, 36px)" }}
+            >
+              Calidad. Velocidad. Flexibilidad.<br />
+              <span className="text-shimmer-gold">Elegí los tres.</span>
+            </h2>
 
-        {/* Problem cards with gradient borders */}
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={defaultViewport}
-          className="grid gap-5 md:grid-cols-3"
-        >
-          {problems.map((p) => {
-            const Icon = p.icon;
-            return (
-              <motion.div
-                key={p.title}
-                variants={scaleIn}
-                className="group relative"
-              >
-                {/* Gradient border wrapper */}
-                <div
-                  className="absolute inset-0 rounded-2xl opacity-60 transition-opacity duration-300 group-hover:opacity-100"
-                  style={{ background: `linear-gradient(135deg, ${p.accent.border}, rgba(15,118,110,0.3), transparent 60%)`, padding: "1px", borderRadius: "1rem" }}
-                />
-                <div className="relative overflow-hidden rounded-[15px] m-px bg-[#0d1313] p-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-                  {/* Corner glow */}
-                  <div
-                    className="pointer-events-none absolute -top-20 -right-20 h-52 w-52 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100"
-                    style={{ background: p.accent.border }}
-                  />
-                  <div className="relative flex flex-col gap-5">
-                    <div className={`inline-flex w-fit items-center justify-center rounded-xl border border-white/10 bg-white/5 p-3 ${p.accent.icon}`}>
-                      <Icon size={22} />
-                    </div>
-                    <div>
-                      <div className={`mb-2 font-mono text-4xl font-bold ${p.accent.stat} drop-shadow-[0_0_8px_currentColor]`}>
-                        {p.stat}
-                      </div>
-                      <h3 className="mb-2 font-display text-lg font-bold text-white">{p.title}</h3>
-                      <p className="font-sans text-sm leading-relaxed text-muted-foreground">{p.body}</p>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })}
-        </motion.div>
+            <ul className="flex flex-col gap-4">
+              {bullets.map((b) => (
+                <li key={b.label} className="flex items-start gap-3">
+                  <Check size={16} className="mt-0.5 shrink-0 text-teal" strokeWidth={2.5} />
+                  <p className="font-sans text-sm leading-relaxed text-muted-foreground">
+                    <span className="font-semibold text-white">{b.label}</span>{" "}{b.desc}
+                  </p>
+                </li>
+              ))}
+            </ul>
 
-        {/* Bridge */}
-        <motion.div
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={defaultViewport}
-          className="mt-20 flex items-center gap-5"
-        >
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/12 to-transparent" />
-          <div className="flex items-center gap-3 rounded-full border border-teal/25 bg-teal/10 px-5 py-2.5">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-cyan" />
-            <span className="font-sans text-sm font-semibold text-cyan">Enter Zenit</span>
-          </div>
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/12 to-transparent" />
-        </motion.div>
+            <a
+              href="/how-it-works"
+              className="inline-flex w-fit items-center gap-2 font-sans text-sm font-semibold text-cyan transition-all hover:gap-3"
+            >
+              See Full Comparison <ArrowRight size={14} />
+            </a>
+          </motion.div>
+
+          {/* ── Mockup (right) ── */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={defaultViewport}
+            transition={{ duration: 0.75, delay: 0.1, ease: [0.22, 1, 0.36, 1] as const }}
+          >
+            <ComparisonMatrix />
+          </motion.div>
+
+        </div>
       </div>
     </section>
   );

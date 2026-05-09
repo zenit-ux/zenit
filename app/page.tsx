@@ -1,28 +1,20 @@
-import { HeroSection }             from "@/components/sections/HeroSection";
-import { TrustSignals }            from "@/components/sections/TrustSignals";
-import { KaizenSection }           from "@/components/sections/KaizenSection";
-import { AIMaturitySection }       from "@/components/sections/AIMaturitySection";
-import { GenUISection }            from "@/components/sections/GenUISection";
-import { AgenticPipelineSection }  from "@/components/sections/AgenticPipelineSection";
-import { PlatformFeatures }        from "@/components/sections/PlatformFeatures";
-import { TestimonialsSection }     from "@/components/sections/TestimonialsSection";
-import { FAQSection }              from "@/components/sections/FAQSection";
-import { FinalCTASection }         from "@/components/sections/FinalCTASection";
+import { HeroSection }            from "@/components/sections/HeroSection";
+import { ProblemSolutionSection } from "@/components/sections/ProblemSolutionSection";
+import { FlowSection }            from "@/components/sections/FlowSection";
+import { WhyZenitSection }        from "@/components/sections/WhyZenitSection";
+import { AITeamsSection }         from "@/components/sections/AITeamsSection";
+import { TestimonialsSection }    from "@/components/sections/TestimonialsSection";
+import { FinalCTASection }        from "@/components/sections/FinalCTASection";
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <TrustSignals />
-      <div id="how-it-works">
-        <KaizenSection />
-      </div>
-      <AIMaturitySection />
-      <GenUISection />
-      <AgenticPipelineSection />
-      <PlatformFeatures />
+      <ProblemSolutionSection />
+      <FlowSection />
+      <WhyZenitSection />
+      <AITeamsSection />
       <TestimonialsSection />
-      <FAQSection />
       <FinalCTASection />
     </>
   );

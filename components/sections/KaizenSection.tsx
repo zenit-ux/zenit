@@ -190,14 +190,14 @@ export function KaizenSection() {
             {/* Title */}
             <div>
               <h2 className="mb-4 font-display font-bold leading-tight text-white" style={{ fontSize: "clamp(26px, 3vw, 42px)" }}>
-                Kaizen: the AI that<br />
-                knows when <span className="text-shimmer">humans</span><br />
-                are irreplaceable.
+                Tu empresa necesita IA.<br />
+                Kaizen encuentra el<br />
+                <span className="text-shimmer">equipo exacto en 48h.</span>
               </h2>
               <p className="font-sans text-lg leading-relaxed text-muted-foreground max-w-lg">
-                Kaizen doesn&apos;t start by searching for squads. It starts by understanding your company —
-                your tech maturity, your existing systems, your actual capacity.
-                <span className="text-white/80"> General project or AI transformation: same platform, same quality, the exact expertise for your situation.</span>
+                Kaizen no busca — entiende. Analiza la madurez tecnológica de tu empresa,
+                tus sistemas actuales y tu capacidad real. Luego conecta con el squad correcto:
+                <span className="text-white/80"> desarrollo general o transformación con IA, sin meses de búsqueda.</span>
               </p>
             </div>
 
@@ -205,23 +205,23 @@ export function KaizenSection() {
             <div className="flex flex-col gap-5">
               <Feature
                 icon={Brain}
-                title="Scale on demand — general or AI"
-                desc="Expand technical capacity when you need it. General projects: any tech stack. AI transformation: specialized AI-native squads. Never locked into fixed headcount."
+                title="Squads IA-nativos o desarrollo general, on demand"
+                desc="¿Necesitás integración de LLMs, MLOps o ingeniería de productos con IA? Kaizen encuentra squads con entrega IA probada — no freelancers genéricos. Mismo proceso para proyectos generales."
               />
               <Feature
                 icon={GitBranch}
-                title="Same quality across every project type"
-                desc="Every squad is technically vetted to the same 4.8★ standard. AI squads: proven in your specific domain — fintech, healthcare, e-commerce. General squads: full-stack expertise matched to your stack."
+                title="4.8★ vetted — de devs React a ML engineers"
+                desc="Dev generalista o especialista en IA: el mismo estándar de vetting técnico, el mismo nivel de calidad. Sin lotería de talento."
               />
               <Feature
                 icon={Zap}
-                title="Right expertise in 48 hours — not 9 months"
-                desc="Legacy migrations, zero-to-one builds, AI implementation — when human judgment is irreplaceable, Kaizen surfaces the right squad. No 9-month search for AI specialists."
+                title="Especialistas en IA en 48h — no en 9 meses"
+                desc="Un hire de IA promedio toma 6–9 meses. Kaizen te conecta con squads verificados en 48 horas. La misma velocidad para cualquier tipo de proyecto."
               />
               <Feature
                 icon={Activity}
-                title="Zero operational burden — any delivery type"
-                desc="No hiring, no onboarding, no equity dilution. Kaizen monitors delivery in full context — code quality for general projects, model performance and knowledge transfer for AI projects."
+                title="Cero overhead — ni para proyectos de IA"
+                desc="Sin hiring, sin onboarding, sin equity. Kaizen monitorea la entrega de proyectos IA — performance del modelo, transferencia de conocimiento, milestones completados."
               />
             </div>
 
