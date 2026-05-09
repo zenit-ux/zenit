@@ -112,7 +112,7 @@ export function FinalCTASection() {
           className="mb-16 text-center"
         >
           <span className="font-sans text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-            Get started — choose your path
+            Ready to scale? Or ready to transform with AI?
           </span>
         </motion.div>
 
@@ -157,12 +157,12 @@ export function FinalCTASection() {
                     <span className="text-shimmer">48 hours.</span>
                   </h3>
                   <p className="mt-4 font-sans text-base leading-relaxed text-muted-foreground">
-                    Post your project, receive vetted matches, build with SafePay protection. Free to start.
+                    General project or AI transformation — post your project, receive vetted matches, build with SafePay protection. Free to start.
                   </p>
                 </div>
 
                 <ul className="flex flex-col gap-2.5">
-                  {["2–3 matched squads in 48h", "SafePay protects every dollar", "Free to post, 12% on hire"].map((item) => (
+                  {["General or AI-specialized squads in 48h", "SafePay protects every dollar", "Free to post, 12% on hire"].map((item) => (
                     <li key={item} className="flex items-center gap-2.5 font-sans text-sm text-white/75">
                       <div className="h-1.5 w-1.5 rounded-full bg-gold/70 shrink-0" />
                       {item}
@@ -171,10 +171,10 @@ export function FinalCTASection() {
                 </ul>
 
                 <Link
-                  href="/get-started?type=company"
+                  href="/companies"
                   className="group/btn inline-flex items-center gap-2 self-start rounded-xl bg-gold px-7 py-3.5 font-sans text-sm font-semibold text-black transition-all duration-300 hover:bg-gold/90 hover:shadow-[0_0_36px_rgba(245,158,11,0.35)] hover:scale-[1.03]"
                 >
-                  Post your project
+                  Explore your options
                   <ArrowRight size={14} className="transition-transform duration-200 group-hover/btn:translate-x-0.5" />
                 </Link>
               </div>
@@ -239,13 +239,39 @@ export function FinalCTASection() {
           </motion.div>
         </motion.div>
 
+        {/* Secondary paths */}
+        <motion.div
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={defaultViewport}
+          className="mt-8 flex flex-col items-center gap-2 text-center"
+        >
+          <p className="font-sans text-xs text-muted-foreground">Or explore specific paths:</p>
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-1">
+            {[
+              { label: "For General Projects", href: "/companies" },
+              { label: "For AI Transformation", href: "/companies" },
+              { label: "How It Works", href: "/how-it-works" },
+            ].map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="font-sans text-xs font-semibold text-teal/80 transition-colors hover:text-teal"
+              >
+                {link.label} →
+              </a>
+            ))}
+          </div>
+        </motion.div>
+
         {/* Social proof strip */}
         <motion.div
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
           viewport={defaultViewport}
-          className="mt-14 flex flex-wrap items-center justify-center gap-x-10 gap-y-3"
+          className="mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-3"
         >
           {[
             { value: "500+", label: "verified squads" },

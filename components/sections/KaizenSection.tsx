@@ -197,7 +197,7 @@ export function KaizenSection() {
               <p className="font-sans text-lg leading-relaxed text-muted-foreground max-w-lg">
                 Kaizen doesn&apos;t start by searching for squads. It starts by understanding your company —
                 your tech maturity, your existing systems, your actual capacity.
-                <span className="text-white/80"> Only when human coordination is genuinely irreplaceable does it mobilize a squad.</span>
+                <span className="text-white/80"> General project or AI transformation: same platform, same quality, the exact expertise for your situation.</span>
               </p>
             </div>
 
@@ -205,23 +205,23 @@ export function KaizenSection() {
             <div className="flex flex-col gap-5">
               <Feature
                 icon={Brain}
-                title="Deep maturity discovery"
-                desc="Kaizen maps your real state: team capacity, legacy debt, AI readiness, existing infrastructure. Not a form — an agentic conversation that builds complete context."
+                title="Scale on demand — general or AI"
+                desc="Expand technical capacity when you need it. General projects: any tech stack. AI transformation: specialized AI-native squads. Never locked into fixed headcount."
               />
               <Feature
                 icon={GitBranch}
-                title="AI-first triage"
-                desc="Before calling anyone, Kaizen determines what AI can handle autonomously. Tasks that don't require human coordination never reach a squad."
+                title="Same quality across every project type"
+                desc="Every squad is technically vetted to the same 4.8★ standard. AI squads: proven in your specific domain — fintech, healthcare, e-commerce. General squads: full-stack expertise matched to your stack."
               />
               <Feature
                 icon={Zap}
-                title="Human deployment when it matters"
-                desc="Legacy migrations, zero-to-one builds, AI implementation — when human judgment is irreplaceable, Kaizen surfaces the right squad in 48h."
+                title="Right expertise in 48 hours — not 9 months"
+                desc="Legacy migrations, zero-to-one builds, AI implementation — when human judgment is irreplaceable, Kaizen surfaces the right squad. No 9-month search for AI specialists."
               />
               <Feature
                 icon={Activity}
-                title="Agentic oversight through delivery"
-                desc="Kaizen doesn't disappear after the match. It holds the full technical context and monitors delivery — intervening when decisions need human escalation."
+                title="Zero operational burden — any delivery type"
+                desc="No hiring, no onboarding, no equity dilution. Kaizen monitors delivery in full context — code quality for general projects, model performance and knowledge transfer for AI projects."
               />
             </div>
 

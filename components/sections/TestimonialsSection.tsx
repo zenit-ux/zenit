@@ -7,25 +7,25 @@ import { cn } from "@/lib/utils";
 
 const quotes = [
   {
-    text: "Zenit found us a React + Node squad in 36 hours. We shipped a production app in 40 days. I'll never post on LinkedIn for devs again.",
+    text: "We expanded to 3 concurrent projects without hiring a single full-time engineer. Same quality, faster delivery, zero equity dilution. Best decision we made in the last two years.",
     name: "Matías Rodríguez",
-    role: "CTO, Pagos Now",
+    role: "CEO, Pagos Now",
     flag: "🇦🇷",
     color: "cyan",
   },
   {
-    text: "We were invisible on Upwork. Zenit gave us verified status, matched us with a fintech in 48 hours, and we've now shipped 4 projects. Revenue up 4× in six months.",
+    text: "We needed AI capabilities but couldn't wait 9 months to hire. Zenit matched us with an AI-native squad. Three months later: live in production and our team actually understands AI. The investment paid for itself 5× over.",
+    name: "Diego Fuentes",
+    role: "CTO, FinTech MX",
+    flag: "🇲🇽",
+    color: "gold",
+  },
+  {
+    text: "We went from bidding on 100 projects to winning 60% of pitches. Because clients come pre-discovered by Kaizen, we're picked for fit — not for being the cheapest.",
     name: "Carlos Mendes",
     role: "Squad Lead, DevCraft",
     flag: "🇧🇷",
     color: "teal",
-  },
-  {
-    text: "Traditional agencies quoted $200K and four months. Zenit delivered in 38 days for $22K. Same quality. No overhead. Just the team we needed.",
-    name: "Diego Fuentes",
-    role: "Founder, TechStart MX",
-    flag: "🇲🇽",
-    color: "gold",
   },
   {
     text: "SafePay is the game-changer. Funds locked before we start. Complete protection for our squad. We've never had a payment dispute since joining.",
@@ -35,7 +35,7 @@ const quotes = [
     color: "cyan",
   },
   {
-    text: "The matching algorithm is scary good. They found a squad with experience in our exact vertical — B2B SaaS for logistics. First call, we knew.",
+    text: "The matching accuracy is unreal. They found a squad with AI experience in our exact vertical — B2B SaaS for logistics. First call, we knew they'd been there before.",
     name: "Ignacia Pérez",
     role: "Head of Product, LogiFlow",
     flag: "🇨🇱",

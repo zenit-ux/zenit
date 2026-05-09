@@ -259,7 +259,7 @@ export function GenUISection() {
           <motion.div variants={fadeInUp} className="mb-4 flex justify-center">
             <span className="inline-flex items-center gap-2 rounded-full border border-teal/30 bg-teal/8 px-4 py-1.5 font-mono text-xs font-bold uppercase tracking-widest text-teal">
               <Sparkles size={11} className="text-teal" />
-              Gen UI
+              Gen UI · AI-native squads ready
             </span>
           </motion.div>
           <motion.h2
@@ -273,7 +273,9 @@ export function GenUISection() {
           <motion.p variants={fadeInUp} className="mx-auto max-w-xl font-sans text-lg leading-relaxed text-muted-foreground">
             No forms. No intake calls. Kaizen extracts requirements from natural conversation
             and builds a structured brief in real time — including tech stack, milestones,
-            budget structure, and squad profile. The UI writes itself.
+            budget, and squad profile. Works for any project:{" "}
+            <span className="text-white/80">general development or AI transformation.</span>{" "}
+            The right expertise, surfaced before you fill a single field.
           </motion.p>
         </motion.div>
 

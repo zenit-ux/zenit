@@ -377,9 +377,9 @@ export function PlatformFeatures() {
         <FeatureSection
           eyebrow="Squad Marketplace"
           title={<>Browse <span className="text-shimmer-gold">500+ elite squads</span>,<br />find yours in minutes.</>}
-          description="Every squad is technically vetted. Real reviews, real delivery history, real availability. Filter by tech stack, budget, or let Kaizen match automatically."
+          description="Every squad is technically vetted. Real reviews, real delivery history, real availability. Filter by tech stack, AI domain expertise, or let Kaizen match automatically — for general projects and AI transformation."
           features={[
-            { title: "Advanced tech stack filtering", desc: "React, Node, Python, DevOps — find exactly what your project needs." },
+            { title: "Advanced tech stack & AI domain filtering", desc: "React, Node, Python, ML/AI, DevOps — find exactly what your project needs, general or AI-specialized." },
             { title: "Verified reviews & delivery track record", desc: "See exactly what each squad has shipped, not just their pitch." },
             { title: "Real-time availability indicators", desc: "Know before you reach out whether a squad can start this week." },
           ]}
@@ -431,11 +431,11 @@ export function PlatformFeatures() {
           centerRise
           eyebrow="Match Intelligence"
           title={<>Kaizen learns.<br />Every match gets <span className="text-shimmer-gold">smarter.</span></>}
-          description="Kaizen doesn't just run a search. It tracks delivery outcomes, client satisfaction, and team performance — improving its matching accuracy with every project."
+          description="Kaizen doesn't just run a search. It tracks delivery outcomes, client satisfaction, and team performance — for general projects and AI transformation alike. Matching accuracy improves with every project completed."
           features={[
-            { title: "94% match quality score", desc: "Squads recommended by Kaizen deliver on time 94% of the time." },
-            { title: "Continuous learning loop", desc: "Every project outcome trains the model to improve future matches." },
-            { title: "Transparent reasoning", desc: "See exactly why Kaizen recommended each squad for your project." },
+            { title: "94% match quality score", desc: "Squads recommended by Kaizen deliver on time 94% of the time — general and AI projects." },
+            { title: "AI domain expertise tracking", desc: "For AI projects: Kaizen tracks mentorship effectiveness and domain-specific delivery, not just code velocity." },
+            { title: "Transparent reasoning", desc: "See exactly why Kaizen recommended each squad for your project — including AI domain fit." },
           ]}
           cta="See the full platform"
           ctaHref="/how-it-works"
