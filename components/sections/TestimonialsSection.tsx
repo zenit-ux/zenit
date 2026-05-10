@@ -5,21 +5,27 @@ import { staggerContainer, scaleIn, defaultViewport } from "@/lib/motionVariants
 
 const quotes = [
   {
-    text: "Escalamos a 3 proyectos sin contratar un solo full-time. Misma calidad, más velocidad, cero equity.",
+    situation: "We were running 3 parallel projects with no capacity to add engineers.",
+    action: "Zenit matched 3 vetted squads in under 2 weeks. Each one fit our stack exactly.",
+    result: "$450k in dev costs saved. 4.7★ quality across all three projects.",
     name: "Matías Rodríguez",
-    role: "CEO, Pagos Now",
+    role: "CEO, Series B SaaS",
     flag: "🇦🇷",
     color: "cyan" as const,
   },
   {
-    text: "Necesitábamos IA pero no podíamos esperar 9 meses. El squad entregó en producción en 3 meses. La inversión se pagó sola 5 veces.",
+    situation: "We promised an AI feature for Q3. Our team had zero AI experience.",
+    action: "Kaizen scoped it in a week. The squad shipped to production in 3 months.",
+    result: "Feature live in Q3 — not 9 months later. Team owns it. No dependency.",
     name: "Diego Fuentes",
     role: "CTO, FinTech MX",
     flag: "🇲🇽",
     color: "gold" as const,
   },
   {
-    text: "Kaizen califica a los clientes antes de que hablemos. Pasamos de 100 propuestas a ganar el 60% de los proyectos.",
+    situation: "We were winning 3% of proposals. Clients didn't trust us — no proof, no ranking.",
+    action: "Kaizen pre-qualified clients. ZenitRank surfaced our track record automatically.",
+    result: "Win rate jumped to 65%. Rates doubled. Zero time wasted on bad-fit clients.",
     name: "Carlos Mendes",
     role: "Squad Lead, DevCraft",
     flag: "🇧🇷",
@@ -37,6 +43,12 @@ const accentMap = {
   cyan: "text-cyan",
   gold: "text-gold",
   teal: "text-teal",
+};
+
+const labelMap = {
+  cyan: "bg-cyan/10 text-cyan",
+  gold: "bg-gold/10 text-gold",
+  teal: "bg-teal/10 text-teal",
 };
 
 export function TestimonialsSection() {
@@ -59,8 +71,8 @@ export function TestimonialsSection() {
             className="font-display font-bold text-white"
             style={{ fontSize: "clamp(24px, 2.8vw, 36px)" }}
           >
-            Squads y empresas{" "}
-            <span className="text-shimmer">confían en Zenit.</span>
+            Real teams.{" "}
+            <span className="text-shimmer">Measurable results.</span>
           </h2>
         </motion.div>
 
@@ -76,14 +88,25 @@ export function TestimonialsSection() {
             <motion.div
               key={q.name}
               variants={scaleIn}
-              className={`flex flex-col justify-between rounded-2xl border p-6 ${borderMap[q.color]}`}
+              className={`flex flex-col gap-4 rounded-2xl border p-6 ${borderMap[q.color]}`}
               style={{ background: "#0F1419" }}
             >
-              <blockquote className="font-sans text-[14px] italic leading-relaxed text-white/80">
-                &ldquo;{q.text}&rdquo;
-              </blockquote>
+              <div className="space-y-2">
+                <div className="flex items-start gap-2">
+                  <span className="mt-0.5 shrink-0 rounded px-1.5 py-0.5 font-mono text-[8px] font-bold uppercase tracking-wider text-white/40 bg-white/5">Situation</span>
+                  <p className="font-sans text-[12px] leading-relaxed text-white/60">{q.situation}</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className={`mt-0.5 shrink-0 rounded px-1.5 py-0.5 font-mono text-[8px] font-bold uppercase tracking-wider ${labelMap[q.color]}`}>Action</span>
+                  <p className="font-sans text-[12px] leading-relaxed text-white/80">{q.action}</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="mt-0.5 shrink-0 rounded px-1.5 py-0.5 font-mono text-[8px] font-bold uppercase tracking-wider bg-white/8 text-white/60">Result</span>
+                  <p className={`font-sans text-[12px] font-semibold leading-relaxed ${accentMap[q.color]}`}>{q.result}</p>
+                </div>
+              </div>
 
-              <div className="mt-5 flex items-center gap-2.5">
+              <div className="mt-auto flex items-center gap-2.5 border-t border-white/5 pt-4">
                 <div className={`flex h-8 w-8 items-center justify-center rounded-full border ${borderMap[q.color]} bg-white/5 font-display text-xs font-bold text-white`}>
                   {q.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
                 </div>
