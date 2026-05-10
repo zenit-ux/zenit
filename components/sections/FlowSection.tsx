@@ -11,32 +11,35 @@ function TimelineMockup() {
     {
       num: "01",
       label: "Discovery",
-      sub: "Kaizen entiende tu proyecto, tu stack y tu capacidad real.",
-      time: "Semana 1–2",
+      sub: "Kaizen interviews your CEO, CTO, PM. Reviews your codebase. Understands architecture, constraints, and timeline.",
+      time: "1–2 weeks",
       colorBorder: "border-cyan/40",
       colorText: "text-cyan",
       colorBg: "bg-cyan/10",
       lineColor: "from-cyan/30",
+      outcome: "You have a clear brief. No vague specifications.",
     },
     {
       num: "02",
       label: "Matching",
-      sub: "3 squads curados por Kaizen. Vos elegís con quién trabajar.",
-      time: "Día 3",
+      sub: "Zenit searches 500+ vetted squads. Filters by stack, complexity, ZenitRank, cultural fit. Returns 3–5 teams you'd actually hire.",
+      time: "24–48 hours",
       colorBorder: "border-teal/40",
       colorText: "text-teal",
       colorBg: "bg-teal/10",
       lineColor: "from-teal/30",
+      outcome: "You interview people who can actually do the job.",
     },
     {
       num: "03",
-      label: "Delivery",
-      sub: "Entrega garantizada por SafePay. Kaizen monitorea cada milestone.",
-      time: "12 semanas",
+      label: "Deployment",
+      sub: "Squad integrates with your workflow. GitHub proves work in real-time. SafePay releases on milestones. Squad B covers in 24h if needed.",
+      time: "2 weeks onboarding",
       colorBorder: "border-gold/40",
       colorText: "text-gold",
       colorBg: "bg-gold/8",
       lineColor: "from-gold/30",
+      outcome: "Project ships on time. Your risk is zero.",
     },
   ];
 
@@ -46,13 +49,12 @@ function TimelineMockup() {
       style={{ background: "#050f0f" }}
     >
       <p className="mb-6 font-mono text-[10px] uppercase tracking-widest text-muted-foreground/60">
-        Proceso estándar · Zenit
+        Standard process · Zenit
       </p>
 
       <div className="flex flex-col">
         {steps.map((step, i) => (
           <div key={step.num} className="flex gap-4">
-            {/* Timeline connector column */}
             <div className="flex flex-col items-center">
               <div
                 className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full border ${step.colorBorder} ${step.colorBg} font-mono text-[11px] font-bold ${step.colorText}`}
@@ -64,22 +66,23 @@ function TimelineMockup() {
               )}
             </div>
 
-            {/* Content */}
-            <div className={i < steps.length - 1 ? "pb-8" : ""}>
+            <div className={i < steps.length - 1 ? "pb-7" : ""}>
               <div className="flex items-center gap-3 mb-1">
                 <p className="font-display text-[15px] font-bold text-white">{step.label}</p>
                 <span className={`font-mono text-[9px] font-semibold ${step.colorText}`}>{step.time}</span>
               </div>
-              <p className="font-sans text-[12px] leading-relaxed text-muted-foreground">{step.sub}</p>
+              <p className="font-sans text-[11px] leading-relaxed text-muted-foreground mb-1">{step.sub}</p>
+              <p className="font-mono text-[10px] text-white/50">
+                <span className={`font-semibold ${step.colorText}`}>Outcome:</span> {step.outcome}
+              </p>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Footer metric */}
       <div className="mt-4 border-t border-white/5 pt-4 flex items-center justify-between">
-        <span className="font-mono text-[9px] text-muted-foreground">Time to first delivery</span>
-        <span className="font-mono text-sm font-bold text-cyan">{"< 3 semanas"}</span>
+        <span className="font-mono text-[9px] text-muted-foreground">Time to first team</span>
+        <span className="font-mono text-sm font-bold text-cyan">2 weeks</span>
       </div>
     </div>
   );
@@ -128,13 +131,13 @@ export function FlowSection() {
               className="font-display font-bold leading-tight text-white"
               style={{ fontSize: "clamp(26px, 3vw, 36px)" }}
             >
-              De cero a producción<br />
-              <span className="text-shimmer-gold">en 3 pasos.</span>
+              From zero to production<br />
+              <span className="text-shimmer-gold">in 3 steps.</span>
             </h2>
 
-            <div className="font-sans text-base leading-relaxed text-muted-foreground space-y-3">
-              <p>Kaizen descubre qué necesitás. Zenit matchea squads capaces. Entregas garantizadas con SafePay.</p>
-              <p className="text-white/80 font-medium">Sin guessing. Sin sorpresas.</p>
+            <div className="font-sans text-base leading-relaxed text-muted-foreground space-y-2">
+              <p>Kaizen discovers. Zenit matches. SafePay protects.</p>
+              <p className="text-white/80 font-medium">No guessing. No surprises.</p>
             </div>
 
             <a
