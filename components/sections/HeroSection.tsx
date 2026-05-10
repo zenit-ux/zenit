@@ -85,26 +85,31 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.12, duration: 0.75, ease: [0.22, 1, 0.36, 1] as const }}
           className="mb-6 font-display font-bold text-white"
-          style={{ fontSize: "clamp(28px, 3.8vw, 48px)", lineHeight: "1.3" }}
+          style={{ fontSize: "clamp(28px, 3.8vw, 48px)", lineHeight: "1.25" }}
         >
-          ¿Cómo acelerar manteniendo calidad<br />
-          <span className="text-shimmer-gold">si necesitás reducir costos?</span>
+          The modern way to<br />
+          <span className="text-shimmer-gold">scale engineering teams.</span>
         </motion.h1>
 
         {/* Subheadline */}
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.28, duration: 0.65, ease: [0.22, 1, 0.36, 1] as const }}
-          className="mb-8 max-w-lg font-sans text-muted-foreground"
+          className="mb-8 max-w-xl space-y-1 font-sans text-muted-foreground"
           style={{ fontSize: "16px", lineHeight: "1.6" }}
         >
-          <span className="font-semibold text-white/90">Zenit.</span>
-          <br /><br />
-          Equipos especializados bajo demanda.<br />
-          Expande capacidad. Reduce costos.<br />
-          <span className="text-white/70">Sin fricciones. Sin sobreexigir a tu equipo.</span>
-        </motion.p>
+          <p>Kaizen discovers what you actually need.</p>
+          <p>Zenit matches vetted squads that fit your stack.</p>
+          <p>You deploy production-ready teams in <span className="text-white/80 font-medium">2 weeks</span> instead of 6 months.</p>
+          <p className="pt-3 font-mono text-sm">
+            <span className="text-gold font-semibold">4.8★</span>
+            <span className="text-white/50 mx-2">·</span>
+            <span className="text-cyan font-semibold">15% cost</span>
+            <span className="text-white/50 mx-2">·</span>
+            <span className="text-white/70">Zero long-term contracts.</span>
+          </p>
+        </motion.div>
 
         {/* CTAs */}
         <motion.div
@@ -118,7 +123,7 @@ export function HeroSection() {
               href="/companies"
               className="inline-flex items-center gap-2 rounded-xl bg-white px-7 py-3 font-sans text-sm font-bold text-[#0F0F0F] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_48px_rgba(255,255,255,0.28)]"
             >
-              Scale Your Next Project →
+              Start Discovery →
             </Link>
             <Link
               href="/squads/pre-registro"
