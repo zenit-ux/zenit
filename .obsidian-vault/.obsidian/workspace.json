@@ -180,11 +180,21 @@
       "daily-notes:Abrir la nota de hoy": false,
       "templates:Insertar plantilla": false,
       "command-palette:Abrir paleta de comandos": false,
-      "bases:Crear nueva base": false
+      "bases:Crear nueva base": false,
+      "templater-obsidian:Templater": false
     }
   },
   "active": "6b183db1b1e63263",
   "lastOpenFiles": [
+    "05-Seguridad/LLM-Security/seguridad.md",
+    "04-Casos-de-Uso/casos-uso.md",
+    "03-Roadmap/escalabilidad.md",
+    "03-Roadmap/roadmap.md",
+    "07-Referencias/Animaciones/recursos-animacion.md",
+    "02-Tecnico/arquitectura.md",
+    "01-Producto/ZenitRank/zenitrank.md",
+    "01-Producto/SafePay/safepay.md",
+    "01-Producto/Kaizen/kaizen.md",
     "01-Producto/SafePay/SafePay-Complete.md",
     "00-Indice/Dashboard.md",
     "01-Producto/Kaizen/Kaizen-Complete.md"
