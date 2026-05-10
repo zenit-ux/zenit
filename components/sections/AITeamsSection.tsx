@@ -8,10 +8,10 @@ import { defaultViewport } from "@/lib/motionVariants";
 
 function AITimelineMockup() {
   const months = [
-    { label: "Mes 1", name: "Assessment",  icon: Search,  color: "cyan",  desc: "Auditoría del sistema actual + gap de IA" },
-    { label: "Mes 2", name: "Build",        icon: Code2,   color: "teal",  desc: "Implementación IA incremental sobre tu stack" },
-    { label: "Mes 3", name: "Rollout",      icon: Rocket,  color: "gold",  desc: "Deploy + validación en producción real" },
-    { label: "Mes 4", name: "Handoff",      icon: Users,   color: "cyan",  desc: "Tu equipo toma el control con capacidad propia" },
+    { label: "Month 1", name: "Assessment",  icon: Search,  color: "cyan",  desc: "Current stack audit + AI opportunity map" },
+    { label: "Month 2", name: "Build",      icon: Code2,   color: "teal",  desc: "Incremental AI implementation on your stack" },
+    { label: "Month 3", name: "Rollout",    icon: Rocket,  color: "gold",  desc: "Deploy + validation in real production" },
+    { label: "Month 4", name: "Handoff",    icon: Users,   color: "cyan",  desc: "Your team takes control with full AI capability" },
   ];
 
   const colorMap = {
@@ -115,27 +115,47 @@ export function AITeamsSection() {
         >
           <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-gold/25 bg-gold/8 px-4 py-1.5 font-mono text-[11px] font-bold uppercase tracking-widest text-gold">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-gold" />
-            Para equipos con IA
+            For AI Teams
           </span>
 
           <h2
-            className="mt-4 mb-4 font-display font-bold leading-tight text-white"
+            className="mt-4 mb-6 font-display font-bold leading-tight text-white"
             style={{ fontSize: "clamp(24px, 2.8vw, 36px)" }}
           >
-            ¿Tu producto es legacy pero el mercado<br className="hidden sm:block" />
-            <span className="text-shimmer"> pasó a IA?</span>
+            Ship AI Features Fast.<br />
+            <span className="text-shimmer">Not 9 Months Later.</span>
           </h2>
 
-          <p className="mx-auto mb-6 max-w-lg font-sans text-base leading-relaxed text-muted-foreground">
-            Agregá IA sin reconstruir. Tu equipo aprende mientras se construye.{" "}
-            <span className="text-white/80">3–4 meses: producto + capacidad propia.</span>
-          </p>
+          {/* Alternatives grid */}
+          <div className="mx-auto mb-8 grid max-w-2xl gap-3 sm:grid-cols-3">
+            {[
+              { label: "Hiring AI engineers", cost: "$300k+ salary", time: "9 months", risk: "Unproven fit. Equity commitment." },
+              { label: "Consulting firm",      cost: "$200k delivery", time: "3 months", risk: "They leave. You still don't know AI." },
+              { label: "DIY with your team",   cost: "Lost time",      time: "Slow",    risk: "Wrong architecture. High risk." },
+            ].map((a) => (
+              <div key={a.label} className="rounded-xl border border-red-500/15 bg-red-500/5 px-4 py-3 text-left">
+                <p className="font-sans text-[11px] font-semibold text-white/70 mb-2">{a.label}</p>
+                <p className="font-mono text-[10px] text-red-400">{a.time} · {a.cost}</p>
+                <p className="font-sans text-[10px] text-white/40 mt-1">{a.risk}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Zenit AI path summary */}
+          <div className="mx-auto mb-6 max-w-lg rounded-xl border border-gold/20 bg-gold/5 px-5 py-4 text-left">
+            <p className="font-mono text-[10px] font-bold uppercase tracking-wider text-gold mb-3">Zenit AI-native path</p>
+            <div className="space-y-1 font-sans text-[12px] text-white/70">
+              <p><span className="text-white/90 font-medium">Timeline:</span> 3–4 months to live feature. Your team learns it.</p>
+              <p><span className="text-white/90 font-medium">Cost:</span> $80–150k (15–18% on project cost)</p>
+              <p><span className="text-white/90 font-medium">ROI:</span> Breaks even month 2–3. Capability stays with you.</p>
+            </div>
+          </div>
 
           <a
             href="/ai-migration"
             className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-gold transition-all hover:gap-3"
           >
-            Learn About AI Migration <ArrowRight size={14} />
+            Explore AI Transformation <ArrowRight size={14} />
           </a>
         </motion.div>
 
