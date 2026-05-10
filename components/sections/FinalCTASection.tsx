@@ -5,6 +5,39 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { fadeInUp, staggerContainer, defaultViewport } from "@/lib/motionVariants";
 
+const audiences = [
+  {
+    label: "For Companies",
+    desc: "Vetted squads in 48h. SafePay on every milestone.",
+    cta: "Start Discovery →",
+    href: "/companies",
+    color: "gold",
+    border: "border-gold/25",
+    bg: "bg-gold/5",
+    text: "text-gold",
+  },
+  {
+    label: "For Squads",
+    desc: "Pre-vetted clients. Set your rate. ZenitRank grows it.",
+    cta: "Pre-register →",
+    href: "/squads/pre-registro",
+    color: "teal",
+    border: "border-teal/25",
+    bg: "bg-teal/5",
+    text: "text-teal",
+  },
+  {
+    label: "For AI Teams",
+    desc: "Ship AI features in 3 months. Your team owns it after.",
+    cta: "Explore AI Path →",
+    href: "/ai-migration",
+    color: "cyan",
+    border: "border-cyan/25",
+    bg: "bg-cyan/5",
+    text: "text-cyan",
+  },
+];
+
 export function FinalCTASection() {
   return (
     <section className="relative overflow-hidden py-28" style={{ background: "#070b0b" }}>
@@ -23,14 +56,13 @@ export function FinalCTASection() {
           style={{ background: "radial-gradient(circle, rgba(0,180,216,0.15) 0%, transparent 65%)", filter: "blur(80px)", opacity: 0.4 }}
         />
         <div className="grid-pattern absolute inset-0 opacity-30" />
-        {/* Corner accents */}
         <div className="absolute top-0 left-0 h-px w-40 bg-gradient-to-r from-teal/50 to-transparent" />
         <div className="absolute top-0 left-0 h-40 w-px bg-gradient-to-b from-teal/50 to-transparent" />
         <div className="absolute bottom-0 right-0 h-px w-40 bg-gradient-to-l from-gold/50 to-transparent" />
         <div className="absolute bottom-0 right-0 h-40 w-px bg-gradient-to-t from-gold/50 to-transparent" />
       </div>
 
-      <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6">
+      <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -44,7 +76,7 @@ export function FinalCTASection() {
             className="inline-flex items-center gap-2 rounded-full border border-teal/25 bg-teal/8 px-4 py-1.5 font-mono text-[11px] font-bold uppercase tracking-widest text-teal"
           >
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-cyan" />
-            Proyectos generales · Transformación IA
+            Get Started
           </motion.span>
 
           {/* Headline */}
@@ -53,7 +85,8 @@ export function FinalCTASection() {
             className="font-display font-bold leading-tight text-white"
             style={{ fontSize: "clamp(28px, 3.5vw, 48px)" }}
           >
-            ¿Listo para escalar?
+            Ship Your Next Team{" "}
+            <span className="text-shimmer-gold">In 2 Weeks.</span>
           </motion.h2>
 
           {/* Subheadline */}
@@ -61,48 +94,27 @@ export function FinalCTASection() {
             variants={fadeInUp}
             className="max-w-lg font-sans text-base leading-relaxed text-muted-foreground"
           >
-            Tanto para proyectos generales como para transformación con IA.{" "}
-            <span className="text-white/80">Equipos vetados en 48h. SafePay protege cada peso.</span>
+            Not 6 months. Not $300k in salaries.{" "}
+            <span className="text-white/80">Vetted squads, proven work, SafePay protection — from day one.</span>
           </motion.p>
 
-          {/* Primary buttons */}
+          {/* 3-audience cards */}
           <motion.div
             variants={fadeInUp}
-            className="flex flex-wrap items-center justify-center gap-4"
+            className="grid w-full gap-4 sm:grid-cols-3"
           >
-            <Link
-              href="/companies"
-              className="inline-flex items-center gap-2 rounded-xl px-8 py-3.5 font-sans text-sm font-bold text-white transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_40px_rgba(0,160,159,0.35)]"
-              style={{ background: "#00A89F" }}
-            >
-              Explore Zenit <ArrowRight size={14} />
-            </Link>
-            <Link
-              href="/get-started?type=squad"
-              className="inline-flex items-center gap-2 rounded-xl border-2 border-teal px-8 py-[13px] font-sans text-sm font-bold text-teal transition-all duration-300 hover:bg-teal/8 hover:scale-[1.03]"
-            >
-              Pre-register Your Squad <ArrowRight size={14} />
-            </Link>
-          </motion.div>
-
-          {/* Secondary links */}
-          <motion.div
-            variants={fadeInUp}
-            className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 font-sans text-[13px]"
-          >
-            <span className="text-muted-foreground">O explorá:</span>
-            {[
-              { label: "For Companies",   href: "/companies" },
-              { label: "For Squads",      href: "/squads" },
-              { label: "Pricing",         href: "/pricing" },
-            ].map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-teal/80 transition-colors hover:text-teal"
+            {audiences.map((a) => (
+              <Link
+                key={a.label}
+                href={a.href}
+                className={`flex flex-col gap-3 rounded-2xl border p-5 text-left transition-all duration-300 hover:scale-[1.02] ${a.border} ${a.bg}`}
               >
-                {link.label}
-              </a>
+                <p className={`font-mono text-[10px] font-bold uppercase tracking-widest ${a.text}`}>{a.label}</p>
+                <p className="font-sans text-[12px] leading-relaxed text-white/60">{a.desc}</p>
+                <span className={`inline-flex items-center gap-1 font-sans text-[12px] font-semibold ${a.text}`}>
+                  {a.cta} <ArrowRight size={11} />
+                </span>
+              </Link>
             ))}
           </motion.div>
 
@@ -112,10 +124,10 @@ export function FinalCTASection() {
             className="mt-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 border-t border-white/8 pt-8"
           >
             {[
-              { value: "500+", label: "squads verificados" },
-              { value: "200+", label: "empresas activas" },
-              { value: "98%",  label: "satisfaction rate" },
-              { value: "$0",   label: "sin compromiso inicial" },
+              { value: "500+",  label: "vetted squads" },
+              { value: "4.8★",  label: "average quality score" },
+              { value: "95%",   label: "project success rate" },
+              { value: "2 wks", label: "to first team" },
             ].map((s) => (
               <div key={s.label} className="flex items-center gap-2">
                 <span className="font-mono text-sm font-bold text-cyan drop-shadow-[0_0_8px_rgba(0,180,216,0.5)]">
