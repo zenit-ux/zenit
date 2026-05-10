@@ -86,10 +86,30 @@ function ComparisonMatrix() {
 /* ─── Section ────────────────────────────────────────────── */
 
 export function WhyZenitSection() {
-  const bullets = [
-    { label: "vs Hiring:",  desc: "4× más rápido, sin equity ni nómina fija" },
-    { label: "vs Upwork:",  desc: "Equipos vetados técnicamente, no random" },
-    { label: "vs Toptal:",  desc: "50% más accesible, misma calidad garantizada" },
+  const alternatives = [
+    {
+      label: "Hiring in-house",
+      pro: "Quality ✓",
+      con: "6 months + $300k+ equity. Headcount forever.",
+    },
+    {
+      label: "Upwork",
+      pro: "Speed ✓",
+      con: "Quality is a gamble. You vet 50 candidates yourself.",
+    },
+    {
+      label: "Toptal",
+      pro: "Quality + Speed ✓",
+      con: "30% commission. Matching takes 2–3 weeks.",
+    },
+  ];
+
+  const zenitBenefits = [
+    { label: "Quality",      desc: "4.8★ vetted squads, production-ready" },
+    { label: "Speed",        desc: "2 weeks, not 6 months" },
+    { label: "Cost",         desc: "15% commission, no equity, no long-term" },
+    { label: "Safety",       desc: "SafePay escrow, GitHub proof, Squad B backup" },
+    { label: "Control",      desc: "You interview 3–5 pre-filtered candidates" },
   ];
 
   return (
@@ -121,20 +141,37 @@ export function WhyZenitSection() {
               className="font-display font-bold leading-tight text-white"
               style={{ fontSize: "clamp(26px, 3vw, 36px)" }}
             >
-              Calidad. Velocidad. Flexibilidad.<br />
-              <span className="text-shimmer-gold">Elegí los tres.</span>
+              Not just faster.<br />
+              <span className="text-shimmer-gold">Better in every way.</span>
             </h2>
 
-            <ul className="flex flex-col gap-4">
-              {bullets.map((b) => (
-                <li key={b.label} className="flex items-start gap-3">
-                  <Check size={16} className="mt-0.5 shrink-0 text-teal" strokeWidth={2.5} />
-                  <p className="font-sans text-sm leading-relaxed text-muted-foreground">
-                    <span className="font-semibold text-white">{b.label}</span>{" "}{b.desc}
-                  </p>
-                </li>
+            {/* Alternatives */}
+            <div className="space-y-3">
+              {alternatives.map((a) => (
+                <div key={a.label} className="rounded-xl border border-white/6 bg-white/[0.03] px-4 py-3">
+                  <div className="flex items-start justify-between gap-3">
+                    <span className="font-sans text-[12px] font-semibold text-white/60">{a.label}</span>
+                    <span className="font-mono text-[10px] text-teal/70 shrink-0">{a.pro}</span>
+                  </div>
+                  <p className="mt-1 font-sans text-[11px] text-red-400/70">{a.con}</p>
+                </div>
               ))}
-            </ul>
+            </div>
+
+            {/* Zenit advantages */}
+            <div className="rounded-xl border border-teal/20 bg-teal/[0.04] px-4 py-4">
+              <p className="mb-3 font-mono text-[10px] font-bold uppercase tracking-widest text-teal">Zenit gives you all five:</p>
+              <ul className="space-y-2">
+                {zenitBenefits.map((b) => (
+                  <li key={b.label} className="flex items-start gap-2.5">
+                    <Check size={13} className="mt-0.5 shrink-0 text-teal" strokeWidth={2.5} />
+                    <p className="font-sans text-[12px] text-white/80">
+                      <span className="font-semibold">{b.label}:</span>{" "}{b.desc}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
             <a
               href="/how-it-works"
