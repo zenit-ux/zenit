@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "d26a6a9d9228b93a",
+        "id": "6f0e20797777acb7",
         "type": "tabs",
         "children": [
           {
-            "id": "252c8de754ea24e1",
+            "id": "04f6ea0d5ecff147",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -176,6 +176,6 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "252c8de754ea24e1",
+  "active": "04f6ea0d5ecff147",
   "lastOpenFiles": []
 }

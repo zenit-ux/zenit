@@ -51,9 +51,114 @@ Pricing page shows 3 plans: Squads ($0), Companies (12%), Enterprise (custom). F
 
 ---
 
-## Copy
+## Copy — English
 
-See `copy-es.md` / `copy-en.md` / `copy-pt.md`.
+Route: `/pricing`
+Language: English (FAQ and SafePay callout — already in EN in code)
+
+### Hero (EN translation of current ES)
+
+- H1: "Simple pricing."
+- Subtext: "No surprises."
+- Body: "15% commission when the project closes — nothing else. SafePay included on every project."
+
+### Plans (EN)
+
+**Squads — $0 / Always free**
+- Tagline: "Free forever"
+- Features: SkillBase profile / Kaizen matching / SafePay on every project / ZenitRank reputation / TalentPath access
+- CTA: "Apply as a squad →"
+
+**Companies — 15% success fee**
+- Tagline: "Pay only on delivery"
+- Features: Kaizen AI discovery / 500+ verified squads / SafePay escrow / Squad B backup / GitHub proof per milestone
+- CTA: "Post your project →"
+- Badge: "Most popular"
+
+**Enterprise — Custom rate**
+- Tagline: "Volume + dedicated SLA"
+- Features: All Companies features / Dedicated Kaizen instance / Priority matching / Custom contracts / Direct support
+- CTA: "Talk to sales →"
+
+### SafePay Callout (already EN in code)
+
+- H2: "Every project protected by SafePay"
+- Body: "Regardless of plan, all projects on Zenit are covered by SafePay escrow. Funds are held until Kaizen validates milestone delivery."
+- Link: "Learn how SafePay works"
+
+### FAQ (already EN in code)
+
+1. **"When does the 15% fee apply?"** — "Only when you hire a squad and a project is started."
+2. **"Is the 15% charged upfront?"** — "No. Added at contract signing, paid proportionally per milestone."
+3. **"Do squads pay any fees?"** — "No. Squads join and receive payments with zero fees."
+4. **"What counts as a 'project' for billing?"** — "Any defined-scope engagement. Retainers billed monthly × 15%."
+5. **"Can I negotiate the fee for large projects?"** — "Yes, projects over $100K eligible for reduced rates."
+
+### Bottom CTA (already EN in code)
+
+- H2: "Start for free. Scale when you're ready."
+- CTA 1: "Get started free"
+- CTA 2: "Contact sales"
+
+---
+
+## Copy — Spanish (Español)
+
+Route: `/pricing`
+Language: Spanish (hero and plans sections)
+
+### Hero
+
+- H1: "Precios simples."
+- Subtext: "Sin sorpresas."
+- Body: "15% de comisión cuando el proyecto cierra — nada más. SafePay incluido en cada proyecto."
+
+### Plans
+
+**Squads — $0 / Gratis siempre**
+- Tagline: "Free forever"
+- Includes: SkillBase profile / Kaizen matching / SafePay en cada proyecto / ZenitRank reputation / TalentPath access
+- CTA: "Pre-register →"
+
+**Companies — 15% / Solo al entregar**
+- Tagline: "Pay only on delivery"
+- Includes: Kaizen AI discovery / 500+ squads verificados / SafePay escrow / Squad B backup / GitHub proof por milestone
+- CTA: "Start Discovery →"
+- Badge: "Más popular"
+
+**Enterprise — A convenir**
+- Tagline: "Volumen + SLA dedicado"
+- Includes: Todo lo de Companies / Instancia Kaizen dedicada / Matching prioritario / Contratos personalizados / Soporte directo
+- CTA: "Contactanos →"
+
+### FAQ
+
+1. "¿Cuándo pago la comisión?" → "Solo cuando un proyecto se completa y el squad cobra."
+2. "¿Hay costos ocultos?" → "No. SafePay, ZenitRank y Kaizen están incluidos."
+3. "¿Qué pasa si el squad no entrega?" → "SafePay retiene el pago. Squad B entra en 24 horas."
+4. "¿Puedo cancelar en cualquier momento?" → "Sí. Sin penalidades, sin compromisos."
+5. "¿TalentPath tiene costo extra?" → "$49/mes por junior. Gratis para squads que mentorean."
+6. "¿TalkFlow está incluido?" → "$29/mes add-on. Funciona dentro de las llamadas de Zenit."
+
+### Bottom CTA
+
+- H2: "Empezá gratis. Escalá cuando estés listo."
+- CTA 1: "Empezar gratis"
+- CTA 2: "Contactar ventas"
+
+---
+
+## Copy — Portuguese (Português)
+
+Route: `/pricing`
+Status: ❌ Missing — All strings TBD (PT-BR).
+
+- H1: TBD — "Preços simples. / Sem surpresas."
+- Plan labels: TBD — "Para Squads / Para Empresas / Enterprise"
+- CTAs: TBD — "Aplicar como squad →" / "Publicar projeto →" / "Falar com vendas →"
+- FAQ: TBD (translate from English copy above)
+
+Translate from English copy above. Keep "SafePay", "Kaizen", "ZenitRank", "milestone", "squad" as-is.
 
 ---
 

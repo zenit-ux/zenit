@@ -43,9 +43,84 @@ Blog listing page with 6 static posts. No `/blog/[slug]` route exists — all po
 
 ---
 
-## Copy
+## Copy — English
 
-See `copy-en.md` / `copy-es.md` / `copy-pt.md`.
+Route: `/blog`
+Language: English (hero, newsletter, UI labels)
+
+### Hero
+
+- H1: "The Zenit Blog"
+- Body: "Insights on remote teams, AI-augmented development, and building with squads."
+- Subheadline variation: "Engineering, product, and culture from the team building Zenit."
+
+### Post Data (static, titles in ES)
+
+1. **Featured** — Category: Engineering — "Por qué el matching automático falla (y cómo Kaizen lo resuelve)" — Abr 28, 2026 — 7 min
+2. Engineering — "SSR vs SR: cuándo cada uno" — Abr 21, 2026
+3. Culture — "La verdad sobre equipos 100% remotos en LATAM" — Abr 14, 2026
+4. Product — "SafePay: cómo construimos escrow para proyectos de software" — Abr 7, 2026
+5. Case Study — "Caso real: cómo Kaizen matcheó un backend bancario en 48h" — Mar 31, 2026
+6. Product — "ZenitRank: por qué la reputación objetiva cambia todo" — Mar 24, 2026
+
+**EN title equivalents (for EN locale):**
+1. "Why Automatic Matching Fails (And How Kaizen Solves It)"
+2. "SSR vs CSR: When to Use Each"
+3. "The Truth About 100% Remote Teams in LATAM"
+4. "SafePay: How We Built Escrow for Software Projects"
+5. "Real Case: How Kaizen Matched a Banking Backend in 48h"
+6. "ZenitRank: Why Objective Reputation Changes Everything"
+
+### Newsletter Section
+
+- H2: "Stay ahead of remote team strategy."
+- Input placeholder: "your@email.com"
+- CTA: "Subscribe →"
+- Form `aria-label`: "Newsletter signup"
+
+---
+
+## Copy — Spanish (Español)
+
+Route: `/blog`
+Language: Spanish (post titles — already in ES in code)
+
+### Post titles (already in ES)
+
+1. "Por qué el matching automático falla (y cómo Kaizen lo resuelve)" — Engineering
+2. "SSR vs SR: cuándo cada uno" — Engineering
+3. "La verdad sobre equipos 100% remotos en LATAM" — Culture
+4. "SafePay: cómo construimos escrow para proyectos de software" — Product
+5. "Caso real: cómo Kaizen matcheó un backend bancario en 48h" — Case Study
+6. "ZenitRank: por qué la reputación objetiva cambia todo" — Product
+
+### Hero (ES translation of current EN)
+
+- H1: "El Blog de Zenit"
+- Body: "Ideas sobre equipos remotos, desarrollo aumentado por IA y cómo construir con squads."
+
+### Newsletter
+
+- H2: "Mantente adelante en estrategia de equipos remotos."
+- Placeholder: "tu@email.com"
+- CTA: "Suscribirse →"
+
+---
+
+## Copy — Portuguese (Português)
+
+Route: `/blog`
+Status: ❌ Missing — All strings TBD (PT-BR).
+
+### Hero
+- H1: TBD — "O Blog da Zenit"
+- Body: TBD
+
+### Post titles (TBD — translate from Spanish copy above)
+
+### Newsletter
+- H2: TBD — "Fique à frente em estratégia de times remotos."
+- CTA: TBD — "Assinar →"
 
 ---
 
